@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>REVIEWS</title>
+</head>
+
+<body>
+
+    <h1>REVIEWS SECTION</h1>
+
+    <div id="app">
+
+        <div>
+            First Name: <input type="text" placeholder="Jandir" v-model="firstNameInput"><br><br>
+            Last Name: <input type="text" placeholder="Porta" v-model="lastNameInput"><br><br>
+            Rating: <input type="range" min="0" max="10" v-model="ratingInput"> {{ratingInput}}<br><br>
+            <p>Review:</p> 
+            <textarea name="" id="review_holder" cols="30" rows="10" placeholder="Enter Review Here" v-model="reviewInput"></textarea> <br>
+            <button v-on:click="submitReview">Submit Review</button>
+        </div>
+
+        <!-- LISTING ALL THE CURRENT REVIEWS -->
+        <ol>
+            <li v-for="review in reviews">
+                <h3> <i>Name: </i> {{review.name}}</h3>
+                <h3> <i>Last Name: </i> {{review.lastName}}</h3>
+                <h3> <i>Rating: </i> {{review.rating}}</h3>
+                <h3> <i>Review: </i> {{review.review}}</h3>
+                <h3> <i>Date Created: </i> {{review.date}}</h3>
+
+            </li>
+        </ol>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
